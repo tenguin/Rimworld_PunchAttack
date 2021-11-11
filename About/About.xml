@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>[Fuu] Punch Attack</name>
+  <author>Fuu Chan</author>
+  <packageId>Fuu.PunchAttack</packageId>
+  <description>
+An unarmed prisoner is escaping! Quick, slice their limbs off with a plasmasword!    
+    
+I'm sure we all wished we could order colonists to simply punch without unequipping them (or can't even unequip if they have implanted weapons). So here's a punch button!
+
+Primary Changes
+1. Adds a punch attack button that appears while colonists are drafted, which functions the same as melee attack, but uses only unarmed attacks (won't use implant weapons either!).
+
+*Optimized for performance.
+*Safe to add mid-game.
+*Safe to remove mid-game, but make sure no colonist is in the middle of a punch attack.
+*Leaves no permanent changes to your saved-game.
+*CE compatible.
+*No known conflicts.
+
+Github Link: https://github.com/tenguin/Rimworld_PunchAttack
+    
+Credits to: sakino_shingetu, Inugami Korone, and Princess Connect: ReDive for the art sources used in the thumbnail and tanosii_chan for the upvote animation! Give them a visit!
+  </description>
+  <supportedVersions>
+    <li>1.3</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+</ModMetaData>
