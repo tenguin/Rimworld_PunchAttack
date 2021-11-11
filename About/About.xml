@@ -9,11 +9,11 @@ An unarmed prisoner is escaping! Quick, slice their limbs off with a plasmasword
 I'm sure we all wished we could order colonists to simply punch without unequipping them (or can't even unequip if they have implanted weapons). So here's a punch button!
 
 Primary Changes
-1. Adds a punch attack button that appears while colonists are drafted, which functions the same as melee attack, but uses only unarmed attacks (won't use implant weapons either!).
+Adds a punch attack button that appears while colonists are drafted, which functions the same as melee attack, but uses only unarmed attacks (won't use implant weapons either!)
 
 *Optimized for performance.
 *Safe to add mid-game.
-*Safe to remove mid-game, but make sure no colonist is in the middle of a punch attack.
+*Safe to remove mid-game, but make sure no colonists are in the middle of a punch attack.
 *Leaves no permanent changes to your saved-game.
 *CE compatible.
 *No known conflicts.
