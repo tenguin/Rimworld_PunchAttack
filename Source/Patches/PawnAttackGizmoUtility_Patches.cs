@@ -16,7 +16,7 @@ namespace PunchAttack
         [HarmonyPatch("GetAttackGizmos")]
         private static void GetGizmos(Pawn pawn, ref IEnumerable<Gizmo> __result)
         {
-            if (pawn.Drafted)
+            if (pawn.Drafted && !pawn.IsColonyMech)
             {
                 __result = GenerateGizmos(pawn, __result);
             }
@@ -77,7 +77,7 @@ namespace PunchAttack
             failStr = "";
             Pawn target2;
             //Removed drafted check since it's done earlier now
-            if (!pawn.IsColonistPlayerControlled)
+            if (!pawn.IsColonistPlayerControlled && !pawn.IsColonyMech && !pawn.IsColonyMutantPlayerControlled)
             {
                 failStr = "CannotOrderNonControlledLower".Translate();
             }
@@ -108,6 +108,18 @@ namespace PunchAttack
                 {
                     return delegate
                     {
+                        //Get the highest chance verbs (like fists) to avoid biting or headbutting unless necessary due to disability
+                        float previousChanceFactor = 0f;
+                        foreach (Verb v in pawn.verbTracker.AllVerbs.Where((Verb x) => x.IsMeleeAttack && x.IsStillUsableBy(pawn)))
+                        {
+                            //Log.Message($"vlabel:{v.tool.untranslatedLabel}");
+                            if (v.tool.chanceFactor > previousChanceFactor)
+                            {
+                                verb = v;
+                                previousChanceFactor = v.tool.chanceFactor;
+                            }
+                        }
+                        //Log.Message($"{verb} id:{verb.tool.id} label:{verb.tool.untranslatedLabel} capabilities:{verb.tool.capacities.RandomElement()}");
                         Job job = JobMaker.MakeJob(PunchAttackDefOf.Fuu_PunchAttack, target); //Use custom job that hides the weapon
                         job.verbToUse = verb; //Use social fight verb
                         Pawn pawn3 = target.Thing as Pawn;

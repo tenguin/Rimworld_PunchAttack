@@ -1,48 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>[Fuu] Punch Attack</name>
-  <author>Fuu Chan</author>
-  <packageId>Fuu.PunchAttack</packageId>
-  <description>
-An unarmed prisoner is escaping! Quick, slice their limbs off with a plasmasword!    
-    
+	<name>Punch Button</name>
+	<author>Fuu Chan</author>
+	<packageId>Fuu.PunchAttack</packageId>
+	<description>
+An unarmed prisoner is escaping! Quick, slice their limbs off with a plasmasword!
+
 I'm sure we all wish we could simply order colonists to punch without unequipping them (or can't even unequip if they have implanted weapons). So here's a punch button!
 
-This simply uses the same code used for social fighting, so it should be compatible with anything.
-
 Primary Changes
-Adds a punch attack button that appears while colonists are drafted, which functions the same as melee attack, but uses only unarmed attacks (won't use implant weapons either!)
+Adds a punch button that appears while colonists are drafted, which forces them to only use unarmed attacks (won't use implant weapons like elbow blades either)!
 
-*Near 0% performance impact (0.001ms per selected pawn when button needs to be rendered).
-*Safe to add mid-game.
-*Safe to remove mid-game, but make sure no colonists are in the middle of a punch attack job.
-*Confirmed compatible with CE, Vanilla Expanded series, Alpha series, and Humanoid Alien Races.
-*No other known incompatibilies.
+Compatibility
+*Near 0% performance impact (0.001ms in Dub's Performance Analyzer to draw the button when a pawn is selected).
 
-(Steam workshop can be slow/janky at detecting updated mods. If the mod doesn't update, unsubscribe, wait a few seconds, and resubscribe to force it to download the latest files)
+*Safe to add and remove mid-game.
+
+*Independent, isolated, and minimal in scope, with no modifications to vanilla behavior/code required: This simply uses the same code as social fighting, so it should be compatible with nearly every mod, will leave no permanent changes to your saved game, and will not brick your game.
+
+*Confirmed compatible with Combat Extended, Vanilla Expanded series, Alpha series, Dubs series, Simple Sidearms, and hundreds more.
+
+Updates
+~3.0 update: Now compatible with 1.5!
+~2.02 update: Added priority so punches are always preferred over headbutting and biting.
+~2.01 update: Removed punch button from appearing on player controlled mechanoids (They're not capable of punching).
 ~2.0 update: Now compatible with 1.4!
 
 Github Link: https://github.com/tenguin/Rimworld_PunchAttack
-    
+
 Credits to: sakino_shingetu, Inugami Korone, and Princess Connect: ReDive for the art sources used in the thumbnail and tanosii_chan for the upvote animation! Give them a visit!
-  </description>
-  <supportedVersions>
-    <li>1.3</li>
-    <li>1.4</li>
-  </supportedVersions>
-  <modDependencies>
-    <li>
-      <packageId>brrainz.harmony</packageId>
-      <displayName>Harmony</displayName>
-      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
-      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-    </li>
-  </modDependencies>
-  <loadAfter>
-    <li>Ludeon.RimWorld</li>
-    <li>Ludeon.RimWorld.Royalty</li>
-    <li>Ludeon.RimWorld.Ideology</li>
-    <li>Ludeon.RimWorld.Biotech</li>
-    <li>brrainz.harmony</li>
-  </loadAfter>
+	</description>
+	<supportedVersions>
+		<li>1.3</li>
+		<li>1.4</li>
+		<li>1.5</li>
+	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
+		<li>brrainz.harmony</li>
+	</loadAfter>
 </ModMetaData>
